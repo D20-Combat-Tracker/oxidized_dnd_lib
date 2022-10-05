@@ -11,7 +11,7 @@ pub struct Race {
     speed: u8,
     size: Size,
     languages: Vec<Languages>,
-    traits: Vec<String>,
+    features: Vec<String>,
     description: String,
     subrace: Option<SubRace>,
 }
@@ -26,7 +26,7 @@ impl Default for Race {
             speed: 30,
             size: Size::Small,
             languages: vec![Languages::Common, Languages::Infernal],
-            traits: vec![String::from("stoneform"), String::from("whistling")],
+            features: vec![String::from("stoneform"), String::from("whistling")],
             description: String::from("What a race this is. It is truly a fantasy race of fantastical proportions."),
             subrace: Some(Default::default())
         }

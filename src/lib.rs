@@ -4,6 +4,8 @@ use serde::{Serialize, Deserialize};
 mod error;
 pub mod races;
 pub mod languages;
+pub mod skills;
+pub mod background;
 
 /// This trait defines some common behaviour for creatures
 /// (creatures include players and npcs and anything that can fight)
@@ -58,6 +60,16 @@ impl AddAssign for AbilitySheet {
 impl AbilitySheet {
     pub fn new(strength: u8, dexterity: u8, constitution: u8, intelligence: u8, wisdom: u8, charisma: u8) -> Self { 
         Self { strength, dexterity, constitution, intelligence, wisdom, charisma } 
+    }
+    pub fn get_ability_score(&self, ability: Ability) -> u8 {
+        match ability {
+            Ability::Strength => self.strength,
+            Ability::Dexterity => self.dexterity,
+            Ability::Constitution => self.constitution,
+            Ability::Intelligence => self.intelligence,
+            Ability::Wisdom => self.wisdom,
+            Ability::Charisma => self.charisma,
+        }
     }
 }
 
