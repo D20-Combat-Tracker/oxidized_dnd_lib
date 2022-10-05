@@ -1,7 +1,7 @@
 use std::fs::File;
 use thiserror::Error;
 
-use oxidized_dnd_lib::races::{Race, SubRace};
+use oxidized_dnd_lib::races::Race;
 
 #[derive(Error, Debug)]
 enum Errors {
@@ -15,7 +15,9 @@ enum Errors {
 
 fn main() -> Result<(), Errors> {
     let race: Race = Default::default();
-    let file = File::create("race.json")?;
-    serde_json::to_writer(file, &race)?;
+    let json = File::create("race.json")?;
+    let yaml = File::create("race.yaml")?;
+    serde_yaml::to_writer(yaml, &race)?;
+    serde_json::to_writer(json, &race)?;
     Ok(())
 }
