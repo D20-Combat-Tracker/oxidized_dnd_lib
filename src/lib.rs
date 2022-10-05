@@ -3,6 +3,7 @@ use std::ops::{Add, AddAssign};
 use serde::{Serialize, Deserialize};
 mod error;
 pub mod races;
+pub mod languages;
 
 /// This trait defines some common behaviour for creatures
 /// (creatures include players and npcs and anything that can fight)

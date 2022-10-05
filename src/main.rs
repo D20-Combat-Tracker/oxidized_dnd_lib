@@ -14,13 +14,13 @@ enum Errors {
 }
 
 fn main() -> Result<(), Errors> {
-    // let race: Race = Default::default();
-    // let json = File::create("race.json")?;
-    // let yaml = File::create("race.yaml")?;
-    // serde_yaml::to_writer(yaml, &race)?;
-    // serde_json::to_writer(json, &race)?;
-    let yaml = File::open("race1.yaml")?;
-    let race: Race = serde_yaml::from_reader(yaml)?;
-    println!("{:?}", race);
+    let race: Race = Default::default();
+    let json = File::create("race.json")?;
+    let yaml = File::create("race.yaml")?;
+    serde_yaml::to_writer(yaml, &race)?;
+    serde_json::to_writer(json, &race)?;
+    // let yaml = File::open("race1.yaml")?;
+    // let race: Race = serde_yaml::from_reader(yaml)?;
+    // println!("{:?}", race);
     Ok(())
 }

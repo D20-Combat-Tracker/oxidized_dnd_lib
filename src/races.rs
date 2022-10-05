@@ -1,5 +1,5 @@
 use serde::{Serialize, Deserialize};
-use crate::{AbilitySheet, Size};
+use crate::{AbilitySheet, Size, languages::Languages};
 
 /// Represents the information for a given race.
 #[derive(Serialize, Deserialize, Debug)]
@@ -10,7 +10,7 @@ pub struct Race {
     expected_lifespan: u16,
     speed: u8,
     size: Size,
-    languages: Vec<String>,
+    languages: Vec<Languages>,
     traits: Vec<String>,
     description: String,
     subrace: Option<SubRace>,
@@ -25,7 +25,7 @@ impl Default for Race {
             expected_lifespan: 90,
             speed: 30,
             size: Size::Small,
-            languages: vec![String::from("hello"), String::from("there")],
+            languages: vec![Languages::Common, Languages::Infernal],
             traits: vec![String::from("stoneform"), String::from("whistling")],
             description: String::from("What a race this is. It is truly a fantasy race of fantastical proportions."),
             subrace: Some(Default::default())
