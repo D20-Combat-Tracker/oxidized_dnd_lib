@@ -2,7 +2,7 @@ use std::ops::{Add, AddAssign};
 
 use serde::{Serialize, Deserialize};
 mod error;
-mod races;
+pub mod races;
 
 /// This trait defines some common behaviour for creatures
 /// (creatures include players and npcs and anything that can fight)
@@ -14,6 +14,13 @@ pub trait Creature {
 }
 
 #[derive(Debug, Serialize, Deserialize)]
+pub enum Size {
+    Small,
+    Medium,
+    Large,
+}
+
+#[derive(Debug, Serialize, Deserialize, Default)]
 pub struct AbilitySheet {
     strength: u8,
     dexterity: u8,
@@ -45,12 +52,6 @@ impl AddAssign for AbilitySheet {
         self.wisdom = self.wisdom + rhs.wisdom;
         self.charisma = self.charisma + rhs.charisma;
     }
-}
-
-pub enum Size {
-    Small,
-    Medium,
-    Large,
 }
 
 impl AbilitySheet {
