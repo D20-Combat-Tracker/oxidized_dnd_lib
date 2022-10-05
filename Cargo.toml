@@ -1,5 +1,5 @@
 [package]
-name = "dnd_character_base"
+name = "oxidized_dnd_lib"
 version = "0.1.0"
 edition = "2021"
 
