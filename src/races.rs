@@ -2,7 +2,7 @@ use serde::{Serialize, Deserialize};
 use crate::{AbilitySheet, Size};
 
 /// Represents the information for a given race.
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Race {
     name: String,
     ability_bonuses: AbilitySheet,
@@ -19,7 +19,7 @@ pub struct Race {
 impl Default for Race {
     fn default() -> Self {
         Self {
-            name: String::from("Vanilla"),
+            name: String::from("Milkshake"),
             ability_bonuses: Default::default(),
             age_of_maturity: 30,
             expected_lifespan: 90,
@@ -34,7 +34,7 @@ impl Default for Race {
 }
 
 /// This struct describes the additional bonuses and traits conferred from a subrace
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct SubRace {
     name: String,
     ability_bonuses: AbilitySheet,
@@ -44,7 +44,7 @@ pub struct SubRace {
 impl Default for SubRace {
     fn default() -> Self {
         Self {
-            name: String::from("Milkshake"),
+            name: String::from("Vanilla"),
             ability_bonuses: Default::default(),
             traits: vec![String::from("why though")],
             description: String::from("a little guy")
