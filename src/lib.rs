@@ -6,6 +6,8 @@ pub mod races;
 pub mod languages;
 pub mod skills;
 pub mod background;
+pub mod classes;
+pub mod dice;
 
 /// This trait defines some common behaviour for creatures
 /// (creatures include players and npcs and anything that can fight)
